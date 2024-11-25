@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function Header() {
   const navigate = useNavigate();
 
@@ -23,7 +24,7 @@ function Header() {
   return (
     <header>
       <nav className="flex justify-center">
-        <ul className="menu menu-horizontal text-white gap-4 bg-base-200 rounded-box shadow-md">
+        <ul className="menu menu-horizontal text-white gap-4 bg-base-200 rounded-box shadow-md bg-blue-700">
           <li>
             <button onClick={handleWelcome} className="hover:underline">
               Home
