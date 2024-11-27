@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl";
 import axios from "axios";
 import "mapbox-gl/dist/mapbox-gl.css"; // Import map style
 
-mapboxgl.accessToken = "API"; // API token
+mapboxgl.accessToken = process.env.API_TOKEN; // API token
 
 export default function MapsContainer() {
   const mapContainer = useRef(null); // Reference container
