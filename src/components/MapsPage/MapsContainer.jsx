@@ -26,7 +26,7 @@ export default function MapsContainer() {
   // Get cinemas from the API backend
   const fetchCinemas = () => {
     axios
-      .get("http://localhost:5000/cinemas")
+      .get(`${process.env.BACKEND_URL}/cinemas`)
       .then((response) => {
         setCinemas(response.data); // Update the list of cinemas.
       })

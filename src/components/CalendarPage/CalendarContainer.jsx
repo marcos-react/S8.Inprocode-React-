@@ -11,7 +11,7 @@ export default function CalendarContainer() {
   // Obtain API Events
   const fetchEvents = () => {
     axios
-      .get("http://localhost:5000/events")
+      .get(`${process.env.BACKEND_URL}/events`)
       .then((response) => setEvents(response.data))
       .catch((err) => console.error("Error fetching events:", err));
   };
@@ -24,7 +24,7 @@ export default function CalendarContainer() {
     }
 
     axios
-      .post("http://localhost:5000/events", {
+      .post(`${process.env.BACKEND_URL}/events`, {
         title: newEventTitle,
         date: selectedDate.toISOString().split("T")[0],
       })
@@ -38,7 +38,7 @@ export default function CalendarContainer() {
   // Delete event
   const handleDeleteEvent = (id) => {
     axios
-      .delete(`http://localhost:5000/events/${id}`)
+      .delete(`${process.env.BACKEND_URL}/events/${id}`)
       .then(() => fetchEvents())
       .catch((err) => console.error("Error deleting event:", err));
   };
