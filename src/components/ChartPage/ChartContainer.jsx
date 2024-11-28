@@ -29,7 +29,7 @@ export default function ChartContainer() {
   // Fetch the chart data from the API
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/chart`)
+      .get(`${process.env.BACKEND_URL}/chart`)
       .then((response) => {
         setChartData(response.data);
       })

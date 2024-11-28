@@ -7,14 +7,14 @@ export default function UserList() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users`)
+      .get(`${process.env.BACKEND_URL}/users`)
       .then((response) => setUsers(response.data))
       .catch((error) => console.error(error));
   }, []);
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/users/${id}`)
+      .delete(`${process.env.BACKEND_URL}/users/${id}`)
       .then(() => setUsers(users.filter((user) => user.id !== id)))
       .catch((error) => console.error(error));
   };
